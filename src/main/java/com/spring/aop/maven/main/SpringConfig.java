@@ -21,7 +21,7 @@ public class SpringConfig {
 		return new AccountAop();
 	}
 	
-	@Bean
+	@Bean(initMethod="init")
 	@Scope("prototype")
 	public AnotherDAO anotherDAO(){
 		return new AnotherDAO();
