@@ -29,8 +29,9 @@ public class AccountAop {
 	}
 	
 	
-	public List<Account> findAccounts(){
+	public List<Account> findAccounts(boolean b)throws Exception{
 		List<Account> accounts = new LinkedList<>();
+		if(b == false)throw new Exception("The exception you are waiting for!");
 		for(int i=0;i<20;i++){
 			accounts.add(new Account(SerialGenerator.getAccountSerial()));
 		}
