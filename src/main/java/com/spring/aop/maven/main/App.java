@@ -4,6 +4,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.spring.aop.maven.dao.AccountAop;
 import com.spring.aop.maven.dao.AnotherDAO;
+import com.spring.aop.maven.model.Fortune;
 
 /**
  * Hello world!
@@ -26,7 +27,13 @@ public class App {
 			// dao.addSomethingElse("dasbndjsalkjdbsajldbnldsadasdsadsadsadsadsadjsabdkjsbadjk");
 			// dao2.addCloudsOnTheSky();			
 			//System.out.println(">>> The find accounts in the container: " + dao.findAccounts(true));
-			System.out.println(">>> The find accounts in the container: " + dao.findAccounts(false));
+			//System.out.println(">>> The find accounts in the container: " + dao.findAccounts(false));
+			Fortune fortune = context.getBean("fortuneService",Fortune.class);
+			Fortune misfortune = context.getBean("misfortuneService",Fortune.class);
+			System.out.println("Fortune: "+fortune);
+			System.out.println("Misfortune: "+misfortune);
+			System.out.println("Fortune of the moment is: "+fortune.getFortune());
+			System.out.println("Misfortune of the moment is: "+misfortune.getFortune());
 		}catch (Exception e) {
 			System.out.println(">>>The Exception has been thrown with the message: "+e.getMessage()+" <<<");;
 		}

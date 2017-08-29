@@ -12,7 +12,7 @@ import com.spring.aop.maven.dao.AnotherDAO;
 
 @Configuration
 @EnableAspectJAutoProxy
-@ComponentScan(basePackages={"com.spring.aop.maven.main","com.spring.aop.maven.dao","com.spring.aop.maven.aop"})
+@ComponentScan(basePackages={"com.spring.aop.maven.main","com.spring.aop.maven.dao","com.spring.aop.maven.aop","com.spring.aop.maven.model"})
 public class SpringConfig {
 		
 	@Bean(initMethod = "init",destroyMethod="destroy")
